@@ -28,15 +28,15 @@ gsql -d MYDB -p 26000
 
 S034：
 
-![image-20240608162149860](./src_img/image-20240608162149860.png)
+![image-20240608162149860](./../lab/img/image-20240608162149860.png)
 
 C034：
 
-![image-20240608162116863](./src_img/image-20240608162116863.png)
+![image-20240608162116863](./../lab/img/image-20240608162116863.png)
 
 SC034：
 
-![image-20240604145243322](./src_img/image-20240604145243322.png)
+![image-20240604145243322](./../lab/img/image-20240604145243322.png)
 
 由于插入的数据量较小，使用基础插入命令即可。
 
@@ -46,15 +46,15 @@ SC034：
 
 S034：
 
-![image-20240604145509393](./src_img/image-20240604145509393.png)
+![image-20240604145509393](./../lab/img/image-20240604145509393.png)
 
 C034：
 
-![image-20240604145927327](./src_img/image-20240604145927327.png)
+![image-20240604145927327](./../lab/img/image-20240604145927327.png)
 
 SC034：
 
-![image-20240604145749188](./src_img/image-20240604145749188.png)
+![image-20240604145749188](./../lab/img/image-20240604145749188.png)
 
 ## 三、SQL操作
 
@@ -68,7 +68,7 @@ FROM C034
 WHERE LEFT(C#, 2) = 'EE';
 ```
 
-![image-20240527142820039](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240527142820039.png)
+![image-20240527142820039](./../lab/img/image-20240527142820039.png)
 
 (2) 查询未选修课程“CS-02”的女生学号及其已选各课程编号、 成绩。
 
@@ -86,7 +86,7 @@ WHERE SC034.S# = S034.S#
 
 
 
-![image-20240529100912157](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240529100912157.png)
+![image-20240529100912157](./../lab/img/image-20240529100912157.png)
 
 (3) 查询 2002 年～2003 年出生学生的基本信息。
 
@@ -96,7 +96,7 @@ FROM S034 AS S
 WHERE EXTRACT(isoyear FROM S.BDATE) BETWEEN 2002 AND 2003
 ```
 
-![image-20240529102553881](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240529102553881.png)
+![image-20240529102553881](./../lab/img/image-20240529102553881.png)
 
 (4) 查询每位学生的学号、 学生姓名及其已选修课程的学分总数。
 
@@ -107,7 +107,7 @@ WHERE S.S# = SC.S# AND SC.C# = C.C#
 GROUP BY S.S#
 ```
 
-![image-20240529121304717](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240529121304717.png)
+![image-20240529121304717](./../lab/img/image-20240529121304717.png)
 
 (5) 查询选修课程“CS-01”的学生中成绩第二高的学生学号。
 
@@ -127,7 +127,7 @@ WHERE  C# = 'CS-01'
   );
 ```
 
-![image-20240529105200754](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240529105200754.png)
+![image-20240529105200754](./../lab/img/image-20240529105200754.png)
 
 (6) 查询平均成绩超过“王涛“同学的学生学号、 姓名和平均成绩， 并按学号进行降序排列。
 
@@ -145,7 +145,7 @@ HAVING AVG(GRADE) > (
 ORDER BY S.S# DESC
 ```
 
-![image-20240529110337898](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240529110337898.png)
+![image-20240529110337898](./../lab/img/image-20240529110337898.png)
 
 (7)查询选修了计算机专业全部课程（课程编号为“ CS-×× ”） 的学生姓名及已获得的学分总数。
 
@@ -166,7 +166,7 @@ HAVING COUNT(*) = (
 )
 ```
 
-![image-20240530160245039](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240530160245039.png)
+![image-20240530160245039](./../lab/img/image-20240530160245039.png)
 
 (8) 查询选修了 3 门以上课程（包括 3 门)的学生中平均成绩最高的同学学号及姓名。  
 
@@ -189,7 +189,7 @@ HAVING AVG(GRADE) >= ALL(
 )
 ```
 
-![image-20240529120656665](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240529120656665.png)
+![image-20240529120656665](./../lab/img/image-20240529120656665.png)
 
 ### 3.2 加入记录
 
@@ -200,16 +200,16 @@ INSERT INTO S034
 VALUES('01032005','刘竞','男','2003-12-10',1.75,'东 14 舍 312' )
 ```
 
-![image-20240530160759250](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240530160759250.png)
+![image-20240530160759250](./../lab/img/image-20240530160759250.png)
 
 ```mysql
 INSERT INTO C034 
 VALUES('CS-03','离散数学',64, 4,'陈建明' )
 ```
 
-![image-20240530160859667](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240530160859667.png)
+![image-20240530160859667](./../lab/img/image-20240530160859667.png)
 
-![image-20240530161005722](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240530161005722.png)
+![image-20240530161005722](./../lab/img/image-20240530161005722.png)
 
 
 
@@ -226,7 +226,7 @@ WHERE S# IN(
 )
 ```
 
-![image-20240530161732113](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240530161732113.png)
+![image-20240530161732113](./../lab/img/image-20240530161732113.png)
 
 ### 3.4 将“张明”老师负责的“信号与系统”课程的学时数调整为 64，同时增加一个学分
 
@@ -236,9 +236,9 @@ SET  PERIOD = 64, CREDIT = CREDIT + 1
 WHERE TEACHER = '张明' AND CNAME = '信号与系统'
 ```
 
-![image-20240530162141985](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240530162141985.png)
+![image-20240530162141985](./../lab/img/image-20240530162141985.png)
 
-![image-20240530162306081](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240530162306081.png)
+![image-20240530162306081](./../lab/img/image-20240530162306081.png)
 
 ### 3.5 建立如下视图：
 
@@ -253,9 +253,9 @@ FROM S034
 WHERE SEX = '男' AND DORM like '东18 舍'
 ```
 
-![image-20240530163734868](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240530163734868.png)
+![image-20240530163734868](./../lab/img/image-20240530163734868.png)
 
-![image-20240530163835363](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240530163835363.png)
+![image-20240530163835363](./../lab/img/image-20240530163835363.png)
 
 (2)“张明”老师所开设课程情况的视图，包括课程编号、课程名称、平均成
 绩等属性。
@@ -270,9 +270,9 @@ WHERE C.TEACHER = '张明'
 GROUP BY C.C#
 ```
 
-![image-20240530164259225](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240530164259225.png)
+![image-20240530164259225](./../lab/img/image-20240530164259225.png)
 
-![image-20240530164327149](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240530164327149.png)
+![image-20240530164327149](./../lab/img/image-20240530164327149.png)
 
 (3)所有选修了“人工智能”课程的学生视图，包括学号、姓名、成绩等属性。  
 
@@ -284,9 +284,9 @@ FROM S034 AS S, SC034 AS SC, C034 AS C
 WHERE CNAME = '人工智能' AND S.S# = SC.S# AND C.C# = SC.C#
 ```
 
-![image-20240530164846271](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240530164846271.png)
+![image-20240530164846271](./../lab/img/image-20240530164846271.png)
 
-![image-20240530164905695](C:\资料\[Current] Grade 3 2nd\COMP462105数据库系统\lab\src_img\image-20240530164905695.png)
+![image-20240530164905695](./../lab/img/image-20240530164905695.png)
 
 ## 四、扩充数据与性能优化
 
@@ -433,15 +433,15 @@ class DeleteRunnable implements Runnable {
 
 S034：
 
-![image-20240605142437399](./src_img/image-20240605142437399.png)
+![image-20240605142437399](./../lab/img/image-20240605142437399.png)
 
 C034：
 
-![image-20240605125647192](./../../../../Users/Jiefucious/AppData/Roaming/Typora/typora-user-images/image-20240605125647192.png)
+![image-20240605125647192](./../lab/img/image-20240605125647192.png)
 
 SC034：
 
-![image-20240605125755605](./src_img/image-20240605125755605.png)
+![image-20240605125755605](./../lab/img/image-20240605125755605.png)
 
 ### 4.3 第二次数据扩充与性能优化
 
@@ -453,15 +453,15 @@ SC034：
 
 S034：
 
-![image-20240605151711563](./src_img/image-20240605151711563.png)
+![image-20240605151711563](./../lab/img/image-20240605151711563.png)
 
 C034：
 
-![image-20240605151744879](./src_img/image-20240605151744879.png)
+![image-20240605151744879](./../lab/img/image-20240605151744879.png)
 
 SC034：
 
-![image-20240605160124283](./src_img/image-20240605160124283.png)
+![image-20240605160124283](./../lab/img/image-20240605160124283.png)
 
 #### 4.3.2 性能优化
 
@@ -483,11 +483,11 @@ SC034：
 
    运行结果：
 
-   ![image-20240605154831503](./src_img/image-20240605154831503.png)
+   ![image-20240605154831503](./../lab/img/image-20240605154831503.png)
 
    解释分析：
 
-   ![image-20240606095143057](./src_img/image-20240606095143057.png)
+   ![image-20240606095143057](./../lab/img/image-20240606095143057.png)
 
 发现其中需要顺序扫描SC中的C#属性，消耗过大。
 
@@ -499,7 +499,7 @@ CREATE INDEX idx_sc034_c ON SC034(C#);
 
 解释分析：
 
-![image-20240606095552360](./src_img/image-20240606095552360.png)
+![image-20240606095552360](./../lab/img/image-20240606095552360.png)
 
 性能得到约28%的优化。
 
@@ -526,7 +526,7 @@ HAVING COUNT(*) = (
 
 解释分析：
 
-![image-20240606101542796](./src_img/image-20240606101542796.png)
+![image-20240606101542796](./../lab/img/image-20240606101542796.png)
 
 发现查询受限于表的连接，其中影响最大的是 `C.C# = SC.C#`的处理上。
 
@@ -538,7 +538,7 @@ CREATE INDEX idx_sc034_c ON SC034(C#);
 
 解释分析：
 
-![image-20240606101437987](./../../../../Users/Jiefucious/AppData/Roaming/Typora/typora-user-images/image-20240606101437987.png)
+![image-20240606101437987](./../lab/img/image-20240606101437987.png)
 
 性能得到约55%的优化。
 
@@ -565,11 +565,11 @@ CREATE INDEX idx_sc034_c ON SC034(C#);
 
    运行结果：
 
-   ![image-20240606103445244](./src_img/image-20240606103445244.png)
+   ![image-20240606103445244](./../lab/img/image-20240606103445244.png)
 
    解释分析：
 
-   ![image-20240606103524126](./src_img/image-20240606103524126.png)
+   ![image-20240606103524126](./../lab/img/image-20240606103524126.png)
 
    该查询中的嵌套查询和重复计算（两次作`HAVING COUNT(*) >= 3`的计算）严重影响了查询效率
 
@@ -597,7 +597,7 @@ CREATE INDEX idx_sc034_c ON SC034(C#);
 
    解释分析：
 
-   ![image-20240606104607524](./src_img/image-20240606104607524.png)
+   ![image-20240606104607524](./../lab/img/image-20240606104607524.png)
 
    性能得到约63%的优化。
 
