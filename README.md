@@ -294,7 +294,7 @@ WHERE CNAME = '人工智能' AND S.S# = SC.S# AND C.C# = SC.C#
 
 #### 4.1.1 数据生成：
 
-1. 使用course_fetch.py在西交教务系统的全校课表中抓取课程信息，然后去除重复课程，生成course.csv。在该程序中，需要注意：
+1. 使用CourseFetch.py在西交教务系统的全校课表中抓取课程信息，然后去除重复课程，生成course.csv。在该程序中，需要注意：
 
    请求头可以通过在浏览器按F12，进入网络项查看日志填充，其中`Cookie`项需要时常更新
 
@@ -315,15 +315,15 @@ WHERE CNAME = '人工智能' AND S.S# = SC.S# AND C.C# = SC.C#
      }
    ```
 
-2. 使用student_generate.py完成学生数据的生成（Student.csv），该程序生成的学生数据学号是唯一的。
+2. 使用StudentGenerate.py完成学生数据的生成（Student.csv），该程序生成的学生数据学号是唯一的。
 
    该程序使用`Faker`库生成学生姓名，其它信息则借助`random`方法生成
 
-3. 使用sc_generate.py生成选课记录sc.csv，选课记录依赖于前面两个程序生成的csv文件。
+3. 使用SCGenerate.py生成选课记录sc.csv，选课记录依赖于前面两个程序生成的csv文件。
 
 #### 4.2.2 数据插入
 
-通过data_insert.java实现。为了通过JDBC插入数据，需要创建java项目，并链接驱动库。具体而言，就是需要链接postgresql.jar。
+通过DataInsert.java实现。为了通过JDBC插入数据，需要创建java项目，并链接驱动库。具体而言，就是需要链接postgresql.jar。
 
 准备过程完成后，可以在代码中使用下面的函数创建连接
 

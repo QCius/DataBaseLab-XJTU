@@ -9,7 +9,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class OpenGaussExample {
+public class DataInsert {
     static final String JDBC_DRIVER = "org.postgresql.Driver";
     static final String DB_URL = "jdbc:postgresql://1.92.85.164:26000/MYDB?ApplicationName=app1&useUnicode=true&characterEncoding=utf8";
     static final String USER = "manager";
