@@ -421,7 +421,7 @@ class DeleteRunnable implements Runnable {
 
 > [!IMPORTANT]
 >
-> 在使用data_insert.java插入时，应该将之前生成的csv文件另存为utf-8格式。其中，在插入Student.csv时，需要在excel中把`BDATE`列的单元格格式设置成日期。
+> 在使用DataInsert.java插入时，应该将之前生成的csv文件另存为utf-8格式。其中，在插入Student.csv时，需要在excel中把`BDATE`列的单元格格式设置成日期。
 >
 > 该程序导入较慢，直接使用Navicat的导入效率更高。
 
